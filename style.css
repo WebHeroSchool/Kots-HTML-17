@@ -1,0 +1,21 @@
+body {
+  background-color: pink;
+}
+
+@media (min-width: 320px) {
+  .header__title {
+    font-size: 50px;
+  }
+  .block {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 640px) {
+  .header__title {
+    font-size: 40px;
+  }
+  .block {
+    font-size: 20px;
+  }
+}

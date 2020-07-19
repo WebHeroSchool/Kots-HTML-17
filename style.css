@@ -1,5 +1,6 @@
 body {
   background-color: pink;
+  margin: 0;
 }
 
 @media (min-width: 320px) {
@@ -18,4 +19,106 @@ body {
   .block {
     font-size: 20px;
   }
+}
+
+.header__title {
+  text-align: center;
+  margin: 8px;
+}
+
+.block {
+  margin: 8px;
+}
+
+.menu {
+    height: 60px;
+    z-index: 100;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Прячем чекбокс */
+#menu__toggle {
+  opacity: 0;
+}
+
+/* вид кнопки и кликабельность */
+.menu__btn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+  padding-left: 8px;
+}
+
+/* Полоски гамбургера */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+}
+
+/* Полоска сверху гамбургера */
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+
+/* Полоска снизу гамбургера */
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+/* контейнер выпадающего меню */
+.menu__box {
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  width: 300px;
+  margin: 0;
+  padding: 80px 0;
+  background-color: #ECEFF1;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+}
+
+/* Пункт выпадающего меню */
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+.menu__item:hover {
+  background-color: #CFD8DC;
+}
+
+/* Крестик */
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
 }
